@@ -1,0 +1,96 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+source ~/.intellimacs/spacemacs.vim
+
+" (Optional) Enable other Intellimacs modules
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+" (Optional) Enable which-key plugin
+source ~/.intellimacs/which-key.vim
+
+set scrolloff=5
+let mapleader="ö"
+set easymotion
+
+" Do incremental searching.
+set incsearch
+set sneak
+set quickscope
+set which-key
+set number relativenumber
+set multicursor 
+
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+set timeoutlen=5000
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'kana/vim-textobj-entire'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'easymotion/vim-easymotion'
+Plug 'chrisbra/matchit'
+Plug 'justinmk/vim-sneak'
+Plug 'terryma/vim-multiple-cursors'
+
+
+let g:WhichKey_ShowVimActions = "true"
+let g:EasyMotion_re_anywhere = '\v' .
+    \       '(<.|^$)' . '|' .
+    \       '(.>|^$)' . '|' .
+    \       '(\l)\zs(\u)' . '|' .
+    \       '(_\zs.)' . '|' .
+    \       '(#\zs.)'
+let g:EasyMotion_re_line_anywhere
+
+
+" Make clearing the last used search pattern easy
+nnoremap <silent> q, :let @/ = ""<CR>
+
+
+nmap <leader>sh  <action>(SetHarpoon1)
+nmap <leader>st <action>(SetHarpoon2)
+nmap <leader>sn <action>(SetHarpoon3)
+nmap <leader>ss  <action>(SetHarpoon4)
+
+nmap <leader>h <action>(GotoHarpoon1)
+nmap <leader>t <action>(GotoHarpoon2)
+nmap <leader>n <action>(GotoHarpoon3)
+nmap <leader>a <action>(GotoHarpoon4)
+
+nmap <leader>e :action ShowHarpoon<cr>
+nmap <leader><C-a> :action AddToHarpoon<cr>
+
+map <Leader>pf <action>(com.mituuz.fuzzier.Fuzzier)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+map <Leader>gf <action>(com.mituuz.fuzzier.FuzzierVCS)  
+
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
