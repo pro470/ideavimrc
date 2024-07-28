@@ -50,6 +50,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'chrisbra/matchit'
 Plug 'justinmk/vim-sneak'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive' 
 
 
 let g:WhichKey_ShowVimActions = "true"
