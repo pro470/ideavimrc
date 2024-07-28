@@ -66,18 +66,18 @@ let g:EasyMotion_re_line_anywhere
 nnoremap <silent> q, :let @/ = ""<CR>
 
 
-nmap <leader>sh  <action>(SetHarpoon1)
-nmap <leader>st <action>(SetHarpoon2)
-nmap <leader>sn <action>(SetHarpoon3)
-nmap <leader>ss  <action>(SetHarpoon4)
+nmap <leader><C-h> :action SetHarpoon1<cr>
+nmap <leader><C-t> :action SetHarpoon2<cr>
+nmap <leader><C-n> :action SetHarpoon3<cr>
+nmap <leader><C-s> :action SetHarpoon4<cr>
 
-nmap <leader>h <action>(GotoHarpoon1)
-nmap <leader>t <action>(GotoHarpoon2)
-nmap <leader>n <action>(GotoHarpoon3)
-nmap <leader>a <action>(GotoHarpoon4)
+nmap <C-h> :action GotoHarpoon1<cr>
+nmap <C-t> :action GotoHarpoon2<cr>
+nmap <C-n> :action GotoHarpoon3<cr>
+nmap <C-s> :action GotoHarpoon4<cr>
 
-nmap <leader>e :action ShowHarpoon<cr>
-nmap <leader><C-a> :action AddToHarpoon<cr>
+nmap <C-e> :action ShowHarpoon<cr>
+nmap <C-a> :action AddToHarpoon<cr>
 
 map <Leader>pf <action>(com.mituuz.fuzzier.Fuzzier)
 map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
